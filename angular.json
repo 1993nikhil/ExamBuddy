@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ExamBuddy"
+    }
+  },
+  "defaultProject": "ExamBuddy",
+  "cli": {
+    "analytics": false
+  }
 }

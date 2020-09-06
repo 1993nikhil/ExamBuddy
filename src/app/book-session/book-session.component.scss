@@ -1,0 +1,19 @@
+$BlackColor : 'color: black';
+.form-Lebel{
+    line-height: 3rem;
+    width: 35%;
+    color: black;
+}
+
+.form-div{
+    line-height: 3rem;   
+    color:$BlackColor;
+}
+input {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: $BlackColor
+  }
+  input:focus {
+    border-color:$BlackColor
+  }
