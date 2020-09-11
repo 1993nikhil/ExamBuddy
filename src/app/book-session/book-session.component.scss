@@ -18,7 +18,8 @@ $BlackColor : 'color: black';
 }
 
 .card-main-width {
-  width:95%
+  width:95%;
+  padding: 2%;
 }
 
 .card-str {
@@ -40,4 +41,10 @@ input {
   }
   input:focus {
     border-color:$BlackColor
+  }
+
+  .select-Time-btn{
+    border: 1px solid #d3580f;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #f0ac59,#e16928);
   }

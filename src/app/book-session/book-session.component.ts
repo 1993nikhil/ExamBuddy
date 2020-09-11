@@ -8,14 +8,15 @@ import { AppGateway } from '../app-gateway/app-gateway';
   styleUrls: ['./book-session.component.scss']
 })
 export class BookSessionComponent implements OnInit {
+  isActive:boolean = false;
+  selectedTime:string = '';
   profileForm = new FormGroup({
     mobileNumber: new FormControl(''),
     nameOfLead: new FormControl(''),
     leadType: new FormControl('')
   });
-  constructor(
-    private appGateway: AppGateway
-   ) {
+  
+  constructor( private appGateway: AppGateway) {
    }
 
   ngOnInit(): void {
@@ -29,9 +30,14 @@ export class BookSessionComponent implements OnInit {
       leadMobileNumber: this.profileForm.value.mobileNumber,
       leadName: this.profileForm.value.nameOfLead,
     };
+    this.isActive = true;
     console.log('Post Json object', data);
     this.appGateway.addLeadInformation(data).subscribe((response) => {
       console.log('Requesting post request for adding lead');
     });
+  }
+  savePreferredtime(time:string){
+    console.log(time);
+    this.selectedTime = time;
   }
 }
