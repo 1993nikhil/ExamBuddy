@@ -4,7 +4,7 @@
     <div class="card-body card-str" *ngIf="!isActive">
       <!-- <h5 class="card-title">Card title</h5> -->
       <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
         <div class="form-div">
           <label class="form-Lebel">I am a </label>
           <input type="radio" id="student" name="leadType" formControlName="leadType" value="Student">
@@ -26,21 +26,37 @@
           <label class="form-Lebel">Your Name:</label>
           <input type="text" formControlName="nameOfLead">
         </div>
-        <button type="submit" class="btn btn-warning submit-btn" >Submit</button>
+        <button type="submit" class="btn btn-warning submit-btn">Submit</button>
       </form>
     </div>
     <div *ngIf="isActive">
-       <div class="form-div text-lg-center">
-         <p> <b>Congratulation, your session is booked.</b> <br/> <b>We will call you withinn 48 hour.</b></p>
-         <div>
-Do you have any preffered time for call? we will try to call you during this time.
-         </div>
-         <div class="row">
-           <div class="col-lg-4 col-sm-6 col-xs-12"><button [ngClass]="selectedTime == 'M' ? 'select-Time-btn' : ''" style="background-color: white;border: 1px solid #d9a90e;" (click)="savePreferredtime('M');" class="btn-sm" type="button">Morning(9 AM To 12 PM)</button></div>
-           <div  class="col-lg-4 col-sm-6 col-xs-12"><button [ngClass]="selectedTime == 'A' ? 'select-Time-btn' : ''" style="background-color: white;border: 1px solid #d9a90e;" (click)="savePreferredtime('A');" type="button" class="btn-sm">Afternoon(12 PM To 4 PM)</button></div>
-           <div  class="col-lg-4 col-sm-6 col-xs-12"><button [ngClass]="selectedTime == 'E' ? 'select-Time-btn' : ''" style="background-color: white;border: 1px solid #d9a90e;" (click)="savePreferredtime('E');" type="button"class="btn-sm">Evening(4 PM To 8 PM)</button></div> 
-         </div>
-       </div>
+      <div class="form-div text-lg-center">
+        <p>
+          <b>Congratulation, your session is booked.</b>
+          <br/>
+          <b>We will call you withinn 48 hour.</b>
+        </p>
+        <div>
+          Do you have any preffered time for call? we will try to call you during this time.
+        </div>
+        <div class="row lft">
+          <div class="col-lg-4 col-sm-6 col-xs-12">
+            <button class="slot-btn" [ngClass]="{'btn-disable': slotBooked, 'select-Time-btn': selectedTime == 'M'}" (click)="savePreferredtime('M');"
+              >Morning(9 AM To 12 PM)</button>
+          </div>
+          <div class="col-lg-4 col-sm-6 col-xs-12">
+            <button class="slot-btn" [ngClass]="{'btn-disable': slotBooked,  'select-Time-btn': selectedTime == 'A'}" (click)="savePreferredtime('A');"
+              >Afternoon(12 PM To 4 PM)</button>
+          </div>
+          <div class="col-lg-4 col-sm-6 col-xs-12">
+            <button class="slot-btn" [ngClass]="{'btn-disable': slotBooked, 'select-Time-btn': selectedTime == 'E'}" (click)="savePreferredtime('E');"
+              >Evening(4 PM To 8 PM)</button>
+          </div>
+        </div>
+        <div class="confirmation-msg" *ngIf="slotBooked">
+          <p>Cool, We have noted it.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -8,15 +8,18 @@ import { AppGateway } from '../app-gateway/app-gateway';
   styleUrls: ['./book-session.component.scss']
 })
 export class BookSessionComponent implements OnInit {
-  isActive:boolean = false;
-  selectedTime:string = '';
+  isActive: boolean;
+  selectedTime: string;
+  slotBooked: boolean;
   profileForm = new FormGroup({
     mobileNumber: new FormControl(''),
     nameOfLead: new FormControl(''),
     leadType: new FormControl('')
   });
-  
+
   constructor( private appGateway: AppGateway) {
+    this.slotBooked = false;
+    this.isActive = false;
    }
 
   ngOnInit(): void {
@@ -36,8 +39,12 @@ export class BookSessionComponent implements OnInit {
       console.log('Requesting post request for adding lead');
     });
   }
-  savePreferredtime(time:string){
+  savePreferredtime(time: string){
     console.log(time);
     this.selectedTime = time;
+    this.slotBooked = true;
+    this.appGateway.addLeadInformation(time).subscribe((response) => {
+      console.log('Requesting post request for adding lead');
+    });
   }
 }

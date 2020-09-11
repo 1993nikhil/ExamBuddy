@@ -20,6 +20,7 @@ $BlackColor : 'color: black';
 .card-main-width {
   width:95%;
   padding: 2%;
+  height: 375px;
 }
 
 .card-str {
@@ -46,5 +47,29 @@ input {
   .select-Time-btn{
     border: 1px solid #d3580f;
     font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius:4px;
     background-image: linear-gradient(to right, #f0ac59,#e16928);
+  }
+
+  .confirmation-msg {
+      margin-top: 40px;
+      font-size: 24px;
+      font-weight: 400;
+  }
+
+  .slot-btn {
+    background-color: white;
+    border: 1px solid #d9a90e;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius:4px;
+  }
+
+  .btn-disable {
+    cursor: not-allowed;
+    pointer-events: none;
   }
