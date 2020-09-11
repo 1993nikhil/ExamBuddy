@@ -5,8 +5,32 @@ $BlackColor : 'color: black';
     color: black;
 }
 
+.body-card {
+  margin: 0;
+  padding: 5% 10% 3% 10%;
+  background-color:#f2f2f2;
+}
+
+.card-header {
+  font-weight: 600;
+  color: black;
+  padding-left: 10px;
+}
+
+.card-main-width {
+  width:95%
+}
+
+.card-str {
+  padding: 3%;
+}
+
+.submit-btn {
+  margin-left: 33%;margin-top: 2%;
+}
+
 .form-div{
-    line-height: 3rem;   
+    line-height: 3rem;
     color:$BlackColor;
 }
 input {

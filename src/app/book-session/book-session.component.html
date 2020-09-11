@@ -1,33 +1,33 @@
-<div class="container-fluid" style="margin: 0;padding: 5% 10% 3% 10%; background-color:#f2f2f2;">
-    <div style="font-weight: 600;color: black;padding-left: 10px;">Book a free session with us -</div>
-    <div class="card" style="width:95%">
-        <div class="card-body" style="padding: 3%;">
-          <!-- <h5 class="card-title">Card title</h5> -->
-          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-          <form [formGroup]="profileForm">
-              <div class="form-div">
-                  <label class="form-Lebel">I am a </label> 
-                  <input type="radio" id="male" name="gender" value="Student">
-                  <label for="male">Student</label> &nbsp;&nbsp;
-                  <input type="radio" id="female" name="gender" value="Parent">
-                  <label for="female">Parent</label>
-              </div>
-              <div class="form-div">
-                <label class="form-Lebel">Exam you are preparing For:</label>
-                IIT-JEE
-              </div>
-            
-            <div class="form-div">
-              <label class="form-Lebel">Your Mobile No:</label>
-              <input type="text" formControlName="firstName">
-            </div>
-          
-            <div class="form-div">
-              <label class="form-Lebel">Your Name:</label>
-              <input type="text" formControlName="lastName">
-            </div>
-           <button class="btn btn-warning" style="margin-left: 33%;margin-top: 2%;">Submit</button>
-          </form>
+<div class="container-fluid body-card">
+  <div class="card-header">Book a free session with us -</div>
+  <div class="card card-main-width">
+    <div class="card-body card-str">
+      <!-- <h5 class="card-title">Card title</h5> -->
+      <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="form-div">
+          <label class="form-Lebel">I am a </label>
+          <input type="radio" id="student" name="leadType" formControlName="leadType" value="Student">
+          <label for="student">Student</label> &nbsp;&nbsp;
+          <input type="radio" id="parent" name="leadType" formControlName="leadType" value="Parent">
+          <label for="parent">Parent</label>
         </div>
-      </div>
+        <div class="form-div">
+          <label class="form-Lebel">Exam you are preparing For:</label>
+          IIT-JEE
+        </div>
+
+        <div class="form-div">
+          <label class="form-Lebel">Your Mobile No:</label>
+          <input type="text" formControlName="mobileNumber">
+        </div>
+
+        <div class="form-div">
+          <label class="form-Lebel">Your Name:</label>
+          <input type="text" formControlName="nameOfLead">
+        </div>
+        <button type="submit" class="btn btn-warning submit-btn" >Submit</button>
+      </form>
     </div>
+  </div>
+</div>
