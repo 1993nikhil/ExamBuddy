@@ -1,41 +1,38 @@
-.dashboard-Main-div{
-    margin: 0px !important; padding: 0px !important;
-}
 
 .dashboard-detail-item {
-  background-color: #f6ddbe;
-  min-height: 50px;
-  padding-left: 4%;
-  background-color:#ecd5b8;
-  min-height: 50px;padding-top:
-  6%;padding-bottom: 5%;
+  //background-color: #f6ddbe;
+  background-image: linear-gradient(to right, #E3D4A1, #F0E1B1) ;   
+  min-height: 50px; 
+ padding:5% 3%; 
 }
-
-.session-btm {
-  margin-right:3%;
-  font-weight:bolder;
-  padding: 15px;
-  color:black;
-}
-
 .detail-text {
   font-size: 22px;
-  color: black;
-  margin-bottom: 5%;
-  margin-top: 5%;
+  margin-bottom: 10%;
+  line-height: normal;
+  margin-top: 8%;
 }
-
 .detail-header {
-  color: black;
   font-size: 30px;
   font-weight: 600px;
+  line-height: normal;
 }
 
 .have-a-call-btn {
-  padding:15px;
+  padding: 1% 5%;
   font-weight:bolder;
+  background-image: linear-gradient(to right, #ee6b0b, #ff9300);
 }
 
-.detail-item-body {
-  width: 55%
+.book-a-free-session-btn {
+  padding: 1% 5%;
+  font-weight:bolder;
+  background-image: linear-gradient(to right, #290f60, #4a2597);
+  color: white;
 }
+
+// .detail-item-body {
+//   width: 55%
+// }
+
+
+

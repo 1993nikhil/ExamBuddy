@@ -8,6 +8,20 @@ import { BookSessionComponent } from './book-session/book-session.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpAppGateway } from './app-gateway/http-app-gateway';
 import { AppGateway } from './app-gateway/app-gateway';
+import { BrowserAnimationsModule,NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule} from '@angular/material/icon';
+import {  MatListModule} from '@angular/material/list';
+import{ MatSidenavModule} from '@angular/material/sidenav';
+import { FlexLayoutModule,MediaChange,MediaObserver } from '@angular/flex-layout';
+import {MatGridListModule} from '@angular/material/grid-list'
+import {MatCardModule} from '@angular/material/card';
+import{MatRadioModule } from '@angular/material/radio';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -16,10 +30,22 @@ import { AppGateway } from './app-gateway/app-gateway';
     DashboardComponent
   ],
   imports: [
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatGridListModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatRadioModule
   ],
   providers: [
     {provide: AppGateway, useClass: HttpAppGateway}

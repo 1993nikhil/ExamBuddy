@@ -1,62 +1,76 @@
-<div class="container-fluid body-card">
+<div class="container-fluid body-card form-div font20">
   <div class="card-header" *ngIf="!isActive">Book a free session with us -</div>
-  <div class="card card-main-width">
-    <div class="card-body card-str" *ngIf="!isActive">
-      <!-- <h5 class="card-title">Card title</h5> -->
-      <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-        <div class="form-div">
-          <label class="form-Lebel">I am a </label>
-          <input type="radio" id="student" name="leadType" formControlName="leadType" value="STUDENT">
-          <label for="student">Student</label> &nbsp;&nbsp;
-          <input type="radio" id="parent" name="leadType" formControlName="leadType" value="PARENT">
-          <label for="parent">Parent</label>
+  <mat-card>
+    <mat-card-content *ngIf="!isActive" style="text-align: left;">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" style="padding:2% 15%">
+        <div fxLayout.lg="row" fxLayout.sm="column">
+          <div [ngClass]="{'width35': !isMobile}">
+            <mat-label>I am a:</mat-label>
+          </div>
+          <div>
+            <mat-radio-group ngDefaultControl name="leadType" formControlName="leadType">
+              <mat-radio-button checked value="STUDENT">Student</mat-radio-button> &nbsp;&nbsp;
+              <mat-radio-button value="PARENT">Parent</mat-radio-button>
+            </mat-radio-group>
+          </div>
         </div>
-        <div class="form-div">
-          <label class="form-Lebel">Exam you are preparing For:</label>
-          IIT-JEE
+        <div fxLayout.lg="row" fxLayout.sm="column">
+          <div [ngClass]="{'width35': !isMobile}">
+            <mat-label>Exam you are preparing For:</mat-label>
+          </div>
+          <div>
+            <!-- <mat-form-field>   -->
+            <span>IIT-JEE</span>
+            <!-- </mat-form-field> -->
+          </div>
         </div>
 
-        <div class="form-div">
-          <label class="form-Lebel">Your Mobile No:</label>
-          <input type="text" formControlName="mobileNumber">
+        <div fxLayout.lg="row" fxLayout.sm="column">
+          <div [ngClass]="{'width35': !isMobile}">
+            <mat-label>Your Mobile No:</mat-label>
+          </div>
+          <div>
+            <mat-form-field>
+              <input formControlName="mobileNumber" type="text" matInput value="" />
+            </mat-form-field>
+          </div>
         </div>
 
-        <div class="form-div">
-          <label class="form-Lebel">Your Name:</label>
-          <input type="text" formControlName="nameOfLead">
+        <div fxLayout.lg="row" fxLayout.sm="column">
+          <div [ngClass]="{'width35': !isMobile}">
+            <mat-label>Your Name:</mat-label>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput formControlName="nameOfLead" type="text" value="" />
+            </mat-form-field>
+          </div>
         </div>
-        <button type="submit" class="btn btn-warning submit-btn">Submit</button>
-      </form>
-    </div>
-    <div *ngIf="isActive">
-      <div class="form-div text-lg-center">
-        <p>
-          <b>Congratulation, your session is booked.</b>
-          <br/>
-          <b>We will call you withinn 48 hour.</b>
-        </p>
         <div>
-          Do you have any preffered time for call? we will try to call you during this time.
+          <button class="submit-btn" mat-flat-button>Submit</button>
         </div>
-        <div class="row lft">
-          <div class="col-lg-4 col-sm-6 col-xs-12">
-            <button class="slot-btn" [ngClass]="{'btn-disable': slotBooked, 'select-Time-btn': selectedTime == 'M'}" (click)="savePreferredtime('M');"
-              >Morning(9 AM To 12 PM)</button>
-          </div>
-          <div class="col-lg-4 col-sm-6 col-xs-12">
-            <button class="slot-btn" [ngClass]="{'btn-disable': slotBooked,  'select-Time-btn': selectedTime == 'A'}" (click)="savePreferredtime('A');"
-              >Afternoon(12 PM To 4 PM)</button>
-          </div>
-          <div class="col-lg-4 col-sm-6 col-xs-12">
-            <button class="slot-btn" [ngClass]="{'btn-disable': slotBooked, 'select-Time-btn': selectedTime == 'E'}" (click)="savePreferredtime('E');"
-              >Evening(4 PM To 8 PM)</button>
-          </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions *ngIf="isActive">
+      <div fxLayout="column">
+        <div fxLayout="column" class="lineheightNormal">
+          <p>Congratulation, your session is booked.</p>
+          <p>We will call you withinn 48 hour.</p>
+          <p>Do you have any preffered time for call? we will try to call you during this time.</p>
+        </div>
+        <div >
+          <button class="slot-btn" [ngClass]="{'btn-disable': slotBooked, 'select-time-btn': selectedTime == '9 AM To 12 PM'}"
+            (click)="savePreferredtime('9 AM To 12 PM');">Morning(9 AM To 12 PM)</button>
+          <button class="slot-btn" [ngClass]="{'btn-disable': slotBooked,  'select-time-btn': selectedTime == '12 PM To 4 PM'}"
+            (click)="savePreferredtime('12 PM To 4 PM');">Afternoon(12 PM To 4 PM)</button>
+          <button class="slot-btn" [ngClass]="{'btn-disable': slotBooked, 'select-time-btn': selectedTime == '4 PM To 8 PM'}"
+            (click)="savePreferredtime('4 PM To 8 PM');">Evening(4 PM To 8 PM)</button>
         </div>
         <div class="confirmation-msg" *ngIf="slotBooked">
           <p>Cool, We have noted it.</p>
         </div>
       </div>
-    </div>
-  </div>
+    </mat-card-actions>
+  </mat-card>
+
 </div>

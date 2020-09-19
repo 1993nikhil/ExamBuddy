@@ -29,4 +29,13 @@ export class HttpAppGateway implements AppGateway {
     };*/
     return this.httpClient.post<any>(url, leadInfo, httpOptions);
   }
+
+  updateTimeSlot(timeSlot: object): Observable<any> {
+    const url = 'exambuddy/user/v1/update';
+    const httpOptions = {
+      headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })};
+    return this.httpClient.post<any>(url, timeSlot, httpOptions);
+  }
 }
