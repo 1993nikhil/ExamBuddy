@@ -1,24 +1,42 @@
-<style>
-  .header{
-    float: left;
-    height: 50px;
-    padding: 15px 15px;
-    font-size: 18px;
-    line-height: 20px;
-    color: black;
-    font-size: 16px;
-  }
-  .header-Logo{
-    color: black;
-    font-size: 40px;
-    font-weight: 700;
-  }
-  .header-text{
-    margin-left: 5%;
-  }
-</style>
+<div> 
+  <mat-toolbar>
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
 
-<nav class="navbar">
+    <a mat-button routerLink="/">
+      <span class="Logo-font-size">Exam Buddy</span>
+    </a>
+    <a mat-button >
+      <span>IIT-JEE</span>
+    </a>
+    
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="/offer">+91-9004477563</a>
+      <a mat-button routerLink="/contact">Login</a>
+    </div>
+
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+      <div fxLayout="column">
+        <a mat-button routerLink="/offer">+91-9004477563</a>
+        <a mat-button routerLink="/contact">Login</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>      
+    </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
+
+
+<!-- <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand header-Logo" href="#">Exam Buddy</a>     
@@ -27,14 +45,11 @@
     <ul class="nav navbar-nav pull-md-right">
       <li class="header">+91-9004477563</li>
       <li class="header"> Login</li>
-      <!-- <span class="glyphicon glyphicon-log-in"></span> -->
+      
     </ul>
   </div>
-</nav>
+</nav> -->
 
-
-
-  <router-outlet></router-outlet>
 
 
 

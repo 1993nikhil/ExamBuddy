@@ -1,21 +1,52 @@
-$BlackColor : 'color: black';
-.form-Lebel{
-    line-height: 3rem;
-    width: 35%;
-    color: black;
-}
-
 .body-card {
+  //line-height: normal;
   margin: 0;
   padding: 5% 10% 3% 10%;
   background-color:#f2f2f2;
 }
-
-.card-header {
-  font-weight: 600;
-  color: black;
-  padding-left: 10px;
+.form-div{
+  line-height: 3rem; 
+  //line-height: normal;
+  //margin-bottom: 5%; 
 }
+
+.width35{
+  width: 35%;
+}
+.width100{
+  width: 100%;
+}
+.font20{
+  font-size: 20px;
+}
+.lineheightNormal{
+  line-height: normal;
+}
+.card-header {
+  font-weight: 500;
+  text-align: left;
+  font-size: 65%;
+  margin-bottom: 9px;
+}
+.submit-btn {
+  padding: 5px 35px;
+  font-weight:bolder;
+  background-image: linear-gradient(to right, #ee6b0b, #ff9300);
+}
+
+.slot-btn {
+  background-color: white;
+  border: 1px solid #d9a90e;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius:4px;
+  width: 210px;
+  margin: 1%;
+}
+
+
+
 
 .card-main-width {
   width:95%;
@@ -31,18 +62,8 @@ $BlackColor : 'color: black';
   margin-left: 33%;margin-top: 2%;
 }
 
-.form-div{
-    line-height: 3rem;
-    color:$BlackColor;
-}
-input {
-    outline: 0;
-    border-width: 0 0 2px;
-    border-color: $BlackColor
-  }
-  input:focus {
-    border-color:$BlackColor
-  }
+
+
 
   .select-Time-btn{
     border: 1px solid #d3580f;
@@ -51,6 +72,7 @@ input {
     text-decoration: none;
     font-size: 16px;
     border-radius:4px;
+    line-height: normal;
     background-image: linear-gradient(to right, #f0ac59,#e16928);
   }
 
@@ -60,16 +82,10 @@ input {
       font-weight: 400;
   }
 
-  .slot-btn {
-    background-color: white;
-    border: 1px solid #d9a90e;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius:4px;
-  }
+
 
   .btn-disable {
     cursor: not-allowed;
     pointer-events: none;
   }
+  

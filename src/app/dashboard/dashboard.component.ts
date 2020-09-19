@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  @Input() deviceXs :boolean;
+  public isMobile: boolean = false;
+  constructor(breakpointObserver: BreakpointObserver) {
+    breakpointObserver.observe([
+      Breakpoints.Handset
+    ]).subscribe(result => {
+      this.isMobile = result.matches;
+      console.log(this.isMobile);
+    });
+  }
 
   ngOnInit(): void {
+    //console.log(this.deviceXs);
   }
 
 }

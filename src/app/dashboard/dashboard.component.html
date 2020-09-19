@@ -1,6 +1,7 @@
-<div class="container-fluid dashboard-Main-div">
-  <div class="dashboard-detail-item">
-      <div class="detail-item-body">
+<div class="dashboard-detail-item">
+  <mat-grid-list cols="7" rowHeight="17rem" fxLayout="row" fxLayoutAlign="start">
+    <mat-grid-tile [colspan]="isMobile ? 7 : 4" [rowspan]="1.4">
+      <div fxLayout="column"  style="padding-top: 2%;text-align: left;">
         <div class="detail-header">
           Facing challanges in Exam Preparation ??
         </div>
@@ -8,9 +9,39 @@
           Get 1:1 Mentorship from Experts, Who have cracked the exams themselves
         </div>
         <div>
-          <button class="btn btn-warning session-btm" routerLink='/bookSession' routerLinkActive="router-link-active">Book a free Session</button>
-          <button class="btn btn-primary have-a-call-btn">Have us call you</button>
+          <button class="have-a-call-btn" mat-flat-button routerLink='/bookSession'
+            routerLinkActive="router-link-active">Book a free session</button> &nbsp;
+          <button class="book-a-free-session-btn" mat-flat-button>Have us call you</button>
         </div>
       </div>
-  </div>
+
+    </mat-grid-tile>
+    <mat-grid-tile fxShow="true" fxHide.lt-md="true" [colspan]="3" [rowspan]="1.4" style=" background-image:  url('../../assets/Image/DashboardImg.png') ;
+      background-repeat: no-repeat; "></mat-grid-tile>
+  </mat-grid-list>
 </div>
+<div style="text-align: left;margin: 2%;line-height: normal;">
+  <span>
+    How our mentor can help you achieve success
+  </span>
+</div>
+<mat-grid-list cols="3" rowHeight="150px" fxLayout.md="row">
+  <!-- <mat-grid-tile [colspan]=3>
+      
+    </mat-grid-tile> -->
+  <mat-grid-tile>
+    <span>
+      <img src="../../assets/Image/keySuccess.png" height="100px;" width="auto" />
+    </span>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <span>
+      <img src="../../assets/Image/connectPeople.png" height="100px;" width="auto" />
+    </span>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <span>
+      <img src="../../assets/Image/keySuccess.png" height="100px;" width="auto" />
+    </span>
+  </mat-grid-tile>
+</mat-grid-list>
