@@ -28,10 +28,12 @@ export class BookSessionComponent implements OnInit {
   onSubmit() {
     console.log('Submit value', this.profileForm.value);
     const data = {
-      leadType: this.profileForm.value.leadType,
+      type: this.profileForm.value.leadType,
       exam: 'IITJEE',
-      leadMobileNumber: this.profileForm.value.mobileNumber,
-      leadName: this.profileForm.value.nameOfLead,
+      mobile: this.profileForm.value.mobileNumber,
+      name: this.profileForm.value.nameOfLead,
+      emailId: '',
+      timeSlot: '',
     };
     this.isActive = true;
     console.log('Post Json object', data);
