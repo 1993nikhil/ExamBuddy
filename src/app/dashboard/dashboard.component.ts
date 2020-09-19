@@ -10,12 +10,10 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 export class DashboardComponent implements OnInit {
   @Input() deviceXs :boolean;
   public isMobile: boolean = false;
+
   constructor(breakpointObserver: BreakpointObserver) {
-    breakpointObserver.observe([
-      Breakpoints.Handset
-    ]).subscribe(result => {
+    breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
-      console.log(this.isMobile);
     });
   }
 
