@@ -13,13 +13,14 @@ export class BookSessionComponent implements OnInit {
   isActive: boolean;
   selectedTime: string;
   slotBooked: boolean;
-  profileForm = new FormGroup({
-    mobileNumber: new FormControl(''),
-    nameOfLead: new FormControl(''),
-    leadType: new FormControl('')
-  });
+  selectedLeadType = 's';
   seqId: number;
-  Leadtype: string[] = ['Student', 'Parent'];
+  profileForm = new FormGroup({
+    mobileNumber: new FormControl('', [Validators.required, Validators.pattern('[0-9 ]{10}')]),
+    nameOfLead: new FormControl('', Validators.required),
+    leadType: new FormControl('', Validators.required)
+  });
+
   constructor(private appGateway: AppGateway, breakpointObserver: BreakpointObserver) {
     this.slotBooked = false;
     this.isActive = false;
@@ -38,7 +39,10 @@ export class BookSessionComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submit value', this.profileForm.value);
+    console.log('Submit value', this.profileForm);
+    if (this.profileForm.invalid){
+      return false;
+    }
     const data = {
       type: this.profileForm.value.leadType,
       exam: 'IITJEE',
