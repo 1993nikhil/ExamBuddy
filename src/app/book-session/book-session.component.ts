@@ -13,7 +13,7 @@ export class BookSessionComponent implements OnInit {
   isActive: boolean;
   selectedTime: string;
   slotBooked: boolean;
-  selectedLeadType = 's';
+  selectedLeadType = 'STUDENT';
   seqId: number;
   profileForm = new FormGroup({
     mobileNumber: new FormControl('', [Validators.required, Validators.pattern('[0-9 ]{10}')]),
@@ -52,15 +52,18 @@ export class BookSessionComponent implements OnInit {
       timeSlot: '',
     };
     console.log('Post Json object', data);
-    this.appGateway.addLeadInformation(data).subscribe((response) => {
-      if (response) {
-        this.seqId = response.id;
-        this.isActive = true;
-      }
-    });
+    // this.appGateway.addLeadInformation(data).subscribe((response) => {
+    //   if (response) {
+    //     this.seqId = response.id;
+    //     this.isActive = true;
+    //   }
+    // });
+    this.isActive = true;
   }
   savePreferredtime(time: string) {
     console.log(time);
+    console.log(this.selectedTime === '9 AM To 12 PM');
+    console.log(this.selectedTime == time);
     this.selectedTime = time;
     this.slotBooked = true;
     const data = {
