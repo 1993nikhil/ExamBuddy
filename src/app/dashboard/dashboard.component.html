@@ -1,7 +1,7 @@
 <div class="dashboard-detail-item">
-  <mat-grid-list cols="7" rowHeight="17rem" fxLayout="row" fxLayoutAlign="start">
-    <mat-grid-tile [colspan]="isMobile ? 7 : 4" [rowspan]="1.4">
-      <div fxLayout="column"  style="padding-top: 2%;text-align: left;">
+  <mat-grid-list cols="7"   class="dashboard-height" fxLayout="row" fxLayoutAlign="start">
+    <mat-grid-tile [colspan]="isMobile ? 7 : 4" [rowspan]="1" class="dashboard-height">
+      <div fxLayout="column" class="detail-spacing">
         <div class="detail-header">
           Facing challanges in Exam Preparation ??
         </div>
@@ -16,8 +16,7 @@
       </div>
 
     </mat-grid-tile>
-    <mat-grid-tile fxShow="true" fxHide.lt-md="true" [colspan]="3" [rowspan]="1.4" style=" background-image:  url('../../assets/Image/DashboardImg.png') ;
-      background-repeat: no-repeat; "></mat-grid-tile>
+    <mat-grid-tile fxShow="true" fxHide.lt-md="true" [colspan]="3" class="dashboard-height dashboard-deatilImg"></mat-grid-tile>
   </mat-grid-list>
 </div>
 <div style="text-align: left;margin: 2%;line-height: normal;">
@@ -26,9 +25,6 @@
   </span>
 </div>
 <mat-grid-list cols="3" rowHeight="150px" fxLayout.md="row">
-  <!-- <mat-grid-tile [colspan]=3>
-      
-    </mat-grid-tile> -->
   <mat-grid-tile>
     <span>
       <img src="../../assets/Image/keySuccess.png" height="100px;" width="auto" />
@@ -41,7 +37,7 @@
   </mat-grid-tile>
   <mat-grid-tile>
     <span>
-      <img src="../../assets/Image/keySuccess.png" height="100px;" width="auto" />
+      <img src="../../assets/Image/analytics-64.png" height="100px;" width="auto" />
     </span>
   </mat-grid-tile>
 </mat-grid-list>

@@ -21,6 +21,7 @@ import {MatCardModule} from '@angular/material/card';
 import{MatRadioModule } from '@angular/material/radio';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { LayoutModule } from '@angular/cdk/layout';
 import { from } from 'rxjs';
 
 @NgModule({
@@ -35,7 +36,7 @@ import { from } from 'rxjs';
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -45,7 +46,8 @@ import { from } from 'rxjs';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    MatRadioModule
+    MatRadioModule,
+    LayoutModule
   ],
   providers: [
     {provide: AppGateway, useClass: HttpAppGateway}
